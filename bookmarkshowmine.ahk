@@ -5,9 +5,9 @@
 
 ;CONFIGURATION
 ;Replace the file paths with those of the txt files you created
-title_txt := "C:\Users\junej\Downloads\master ahk\bookmark\bookmarkhelper.txt"
-address_txt := "C:\\Users\\junej\\Downloads\\master ahk\\bookmark\\bookmarksahk.txt"
-counter_txt := "C:\Users\junej\Downloads\master ahk\bookmark\bookmarkcounter.txt"
+title_txt := "C:\Users\user\master ahk\bookmark\title.txt"
+address_txt := "C:\Users\user\master ahk\bookmark\address.txt"
+counter_txt := "C:\Users\user\master ahk\bookmark\counter.txt"
 ^+!b::
 {
     ; Initialize variables
