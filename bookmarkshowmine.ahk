@@ -2,14 +2,20 @@
 #SingleInstance Force
 +Esc::ExitApp   
 
+
+;CONFIGURATION
+;Replace the file paths with those of the txt files you created
+title_txt := "C:\Users\junej\Downloads\master ahk\bookmark\bookmarkhelper.txt"
+address_txt := "C:\\Users\\junej\\Downloads\\master ahk\\bookmark\\bookmarksahk.txt"
+counter_txt := "C:\Users\junej\Downloads\master ahk\bookmark\bookmarkcounter.txt"
 ^+!b::
 {
     ; Initialize variables
     x := "Heck"
-    texty := FileOpen("C:\\Users\\junej\\Downloads\\master ahk\\bookmark\\bookmarkhelper.txt", "r")
+    texty := FileOpen(title_txt, "r")
 
     ; Create GUI with a resizable window
-    global MyGui := Gui("+Resize")  ; Declare MyGui as global
+    global MyGui := Gui("+Resize")
     MyGui.Title := "Bookmarks List"
 
     ; Add a Search Bar
@@ -40,7 +46,7 @@
         i := 1  ; Initialize counter
 
         ; Read through another file "bookmarksahk.txt" line by line
-        Loop read, "C:\\Users\\junej\\Downloads\\master ahk\\bookmark\\bookmarksahk.txt"
+        Loop read, address_txt
         {
             ; Parse each line using tab as a delimiter
             Loop parse, A_LoopReadLine, A_Tab
@@ -89,13 +95,13 @@ Sleep 100
 Send "^c"
 Sleep 100
 Result := InputBox("Enter the title", "Bookmark website")
-fbook := FileOpen("C:\Users\junej\Downloads\master ahk\bookmark\bookmarksahk.txt", "a")
-fhelper := FileOpen("C:\Users\junej\Downloads\master ahk\bookmark\bookmarkhelper.txt", "a")
+fbook := FileOpen(address_txt, "a")
+fhelper := FileOpen(title_txt, "a")
 Title := Result.Value
 
 
 {
-fcounter := FileOpen("C:\Users\junej\Downloads\master ahk\bookmark\bookmarkcounter.txt", "rw")
+fcounter := FileOpen(counter_txt, "rw")
 fcounter.Seek(0)
 i2 := fcounter.ReadLine()
 i2 := i2+0
