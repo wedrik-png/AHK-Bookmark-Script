@@ -8,7 +8,7 @@ An autohotkey script to save and open bookmarks locally.
 ## Installation
 
 1. Download and install [AutoHotkey](https://www.autohotkey.com/).
-2. Download or clone this repository to your local machine.
+2. Download the ahk script.
 4. Run the script (`bookmarkhelper.ahk`).
 
 ## Contributing
